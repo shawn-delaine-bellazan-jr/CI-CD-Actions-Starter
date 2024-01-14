@@ -1,8 +1,8 @@
 name: Project
-run-name: Create Project Template
+run-name: Project Template
 on: [push]
 jobs:
-  Automate-Projects-Actions:
+  Add-Project:
     runs-on: ubuntu-latest
     steps:
       - run: echo "User - ${{ github.actor }}"
