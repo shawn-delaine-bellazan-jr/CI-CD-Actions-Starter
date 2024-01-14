@@ -1,0 +1,19 @@
+name: GitHub Actions Project
+run-name: Creating GitHub project Template
+on: [push]
+jobs:
+  Automate-Projects-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "User/:/ ${{ github.actor }}"
+      - run: echo "Event/:/ ${{ github.event_name }}"
+      - run: echo "Branch/:/ ${{ github.ref }}"
+      - run: echo "Repository/:/ ${{ github.repository }}"
+      - run: echo "Operating System/:/ ${{ runner.os }}"
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "Status/:/ ${{ job.status }}"
+
